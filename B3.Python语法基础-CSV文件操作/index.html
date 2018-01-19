@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="老渔夫不吃鱼">
 <meta property="og:description" content="CSV文件 CSV简介： CSV文件通常用于我们在电子表格软件和纯文本之间交互数据，CSV文件内容是一些用逗号分隔的原始字符串。 CSV文件的操作在Python中有单独的模块来使用，模块名为csv     CSV文本操作  导入模块：import csv 打开文件对象：fp = open(‘1.csv’, ‘a+’ ) 返回专门用做csv处理的读，或写对象：fp = csv.writer(fp)；">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-19T03:55:25.387Z">
+<meta property="og:updated_time" content="2018-01-19T08:34:15.404Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSV文件操作">
 <meta name="twitter:description" content="CSV文件 CSV简介： CSV文件通常用于我们在电子表格软件和纯文本之间交互数据，CSV文件内容是一些用逗号分隔的原始字符串。 CSV文件的操作在Python中有单独的模块来使用，模块名为csv     CSV文本操作  导入模块：import csv 打开文件对象：fp = open(‘1.csv’, ‘a+’ ) 返回专门用做csv处理的读，或写对象：fp = csv.writer(fp)；">
@@ -391,6 +391,11 @@
 <hr>
 <h4 id="CSV写文件"><a href="#CSV写文件" class="headerlink" title="CSV写文件"></a>CSV写文件</h4><p>csv提供了一个写函数：<strong>writerow()</strong>方法，为文件写入以<strong>逗号分割</strong>的数据<br>逗号分割的数据：常见的有<strong>list</strong>，<strong>tuple</strong>，<strong>set</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writer = csv.writer(fp)</span><br><span class="line">writer.writerow((<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：在写csv文件的时候，可能会出现一行数据一个空行<br>可以通过在打开文件时指定: <font color="#6495ED"><strong>newline</strong>=’’</font> 或以<strong>二进制</strong>打开: <font color="#6495ED">open(‘data.csv’,’wb’)</font></p>
+<font color="#6495ED">open(‘data.csv’,’w’,<strong>newline</strong>=’’)</font><br><font color="#6495ED">csvfile = open(‘data.csv’,’w’)</font>
+
+</blockquote>
 <hr>
 <h4 id="CSV读文件"><a href="#CSV读文件" class="headerlink" title="CSV读文件"></a>CSV读文件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reader = csv.reader(fp) <span class="comment">#生成对应文件的csv读对象</span></span><br><span class="line"><span class="keyword">for</span> var1,var2,var3… <span class="keyword">in</span> reader:</span><br><span class="line">	print(var1,var2,var3…)</span><br></pre></td></tr></table></figure>
 <hr>
