@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="老渔夫不吃鱼">
 <meta property="og:description" content="异常介绍当我们的程序发生一些解释器无法继续处理下去的事情，我们的解释器无法执行无法编译，并且会抛出错误(异常)一般的异常是一些逻辑错误，语法错误，无法生成结果等抛出错误(异常)之后，我们的程序将无法正常执行下去(抛出的错误会使我们的程序(一般是终止)做错误的默认处理)但是我们也可以自己去改写出现错误之后的默认处理动作，也叫做捕获异常；这么做的目的就是为了提高我们程序的健壮性，应对各种复杂的互联网计">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-19T04:50:53.338Z">
+<meta property="og:updated_time" content="2018-01-19T05:02:27.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="异常处理">
 <meta name="twitter:description" content="异常介绍当我们的程序发生一些解释器无法继续处理下去的事情，我们的解释器无法执行无法编译，并且会抛出错误(异常)一般的异常是一些逻辑错误，语法错误，无法生成结果等抛出错误(异常)之后，我们的程序将无法正常执行下去(抛出的错误会使我们的程序(一般是终止)做错误的默认处理)但是我们也可以自己去改写出现错误之后的默认处理动作，也叫做捕获异常；这么做的目的就是为了提高我们程序的健壮性，应对各种复杂的互联网计">
@@ -374,6 +374,42 @@
 
       
         <h3 id="异常介绍"><a href="#异常介绍" class="headerlink" title="异常介绍"></a>异常介绍</h3><p>当我们的程序发生一些解释器无法继续处理下去的事情，我们的解释器无法执行无法编译，并且会抛出<strong>错误</strong>(<strong>异常</strong>)<br>一般的异常是一些<strong>逻辑错误</strong>，<strong>语法错误</strong>，<strong>无法生成结果</strong>等<br>抛出错误(<strong>异常</strong>)之后，我们的程序将无法正常执行下去(抛出的错误会使我们的程序(一般是<strong>终止</strong>)做错误的默认处理)<br>但是我们也可以自己去<strong>改写</strong>出现错误之后的<strong>默认处理动作</strong>，也叫做<strong>捕获</strong>异常；这么做的目的就是为了提高我们程序的健壮性，应对各种复杂的互联网计算机环境</p>
+<hr>
+<h4 id="一些常见的异常"><a href="#一些常见的异常" class="headerlink" title="一些常见的异常"></a>一些常见的异常</h4><blockquote>
+<p>尝试访问未声明变量：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">NameError: name <span class="string">'a'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>除数为0：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>/<span class="number">0</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ZeroDivisionError: integer division <span class="keyword">or</span> modulo by zero</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>语法错误：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">if</span></span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span></span><br><span class="line">     ^</span><br><span class="line">SyntaxError: invalid syntax</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>访问字典中不存在的key值：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mydict = &#123;<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">2</span>:<span class="string">'b'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mydict[<span class="number">3</span>]</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">KeyError: <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>索引超出范围：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist[<span class="number">5</span>]</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>访问未知的对象属性：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist[<span class="number">5</span>]</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>缩进错误：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line"><span class="meta">... </span><span class="keyword">print</span> <span class="string">'a==1'</span></span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">2</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'a==1'</span></span><br><span class="line">        ^</span><br><span class="line">IndentationError: expected an indented block</span><br></pre></td></tr></table></figure>
+<hr>
 
       
     </div>
@@ -611,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#异常介绍"><span class="nav-number">1.</span> <span class="nav-text">异常介绍</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#异常介绍"><span class="nav-number">1.</span> <span class="nav-text">异常介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一些常见的异常"><span class="nav-number">1.1.</span> <span class="nav-text">一些常见的异常</span></a></li></ol></li></ol></div>
             
 
           </div>
