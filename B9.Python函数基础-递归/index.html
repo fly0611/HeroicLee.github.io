@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="递归 递归的概念：函数包含了对自身的调用，那么就是递归使用的场景：如果你发现你将要做的事情就是你现在做的，那么用递归递归类似循环；在编写或阅读递归时，首先我们关注的是递归的终止条件  递归求和 在接触递归之前，我们先来做这么一个问题：如果说，要对一个数字列表求和（或者其他序列）求和，除了我们可以使用内置的sum函数，还有什么办法？    while循环：  12345L = [1,2,3,4,5]">
+<meta name="description" content="递归 递归的概念：函数包含了对自身的调用，那么就是递归使用的场景：如果你发现你将要做的事情就是你现在做的，那么用递归递归类似循环；在编写或阅读递归时，首先我们关注的是递归的终止条件   递归求和 在接触递归之前，我们先来做这么一个问题：如果说，要对一个数字列表求和（或者其他序列）求和，除了我们可以使用内置的sum函数，还有什么办法？如果你还有更优秀的办法，可以在关于页面找到我的联系方式，有偿提交给">
 <meta name="keywords" content="Python3.x,Python函数基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="递归">
 <meta property="og:url" content="https://heroiclee.github.io/B9.Python函数基础-递归/index.html">
 <meta property="og:site_name" content="老渔夫不吃鱼">
-<meta property="og:description" content="递归 递归的概念：函数包含了对自身的调用，那么就是递归使用的场景：如果你发现你将要做的事情就是你现在做的，那么用递归递归类似循环；在编写或阅读递归时，首先我们关注的是递归的终止条件  递归求和 在接触递归之前，我们先来做这么一个问题：如果说，要对一个数字列表求和（或者其他序列）求和，除了我们可以使用内置的sum函数，还有什么办法？    while循环：  12345L = [1,2,3,4,5]">
+<meta property="og:description" content="递归 递归的概念：函数包含了对自身的调用，那么就是递归使用的场景：如果你发现你将要做的事情就是你现在做的，那么用递归递归类似循环；在编写或阅读递归时，首先我们关注的是递归的终止条件   递归求和 在接触递归之前，我们先来做这么一个问题：如果说，要对一个数字列表求和（或者其他序列）求和，除了我们可以使用内置的sum函数，还有什么办法？如果你还有更优秀的办法，可以在关于页面找到我的联系方式，有偿提交给">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-18T11:33:32.419Z">
+<meta property="og:updated_time" content="2018-01-19T03:21:12.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="递归">
-<meta name="twitter:description" content="递归 递归的概念：函数包含了对自身的调用，那么就是递归使用的场景：如果你发现你将要做的事情就是你现在做的，那么用递归递归类似循环；在编写或阅读递归时，首先我们关注的是递归的终止条件  递归求和 在接触递归之前，我们先来做这么一个问题：如果说，要对一个数字列表求和（或者其他序列）求和，除了我们可以使用内置的sum函数，还有什么办法？    while循环：  12345L = [1,2,3,4,5]">
+<meta name="twitter:description" content="递归 递归的概念：函数包含了对自身的调用，那么就是递归使用的场景：如果你发现你将要做的事情就是你现在做的，那么用递归递归类似循环；在编写或阅读递归时，首先我们关注的是递归的终止条件   递归求和 在接触递归之前，我们先来做这么一个问题：如果说，要对一个数字列表求和（或者其他序列）求和，除了我们可以使用内置的sum函数，还有什么办法？如果你还有更优秀的办法，可以在关于页面找到我的联系方式，有偿提交给">
 
 
 
@@ -376,11 +376,9 @@
         <h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><blockquote>
 <p><strong>递归的概念</strong>：函数<strong>包含</strong>了对<strong>自身</strong>的调用，那么就是<strong>递归</strong><br><strong>使用的场景</strong>：如果你发现你<strong>将要做</strong>的事情就是你<strong>现在做</strong>的，那么用递归<br>递归类似循环；在编写或阅读递归时，首先我们关注的是递归的<strong>终止条件</strong></p>
 </blockquote>
-<h4 id="递归求和"><a href="#递归求和" class="headerlink" title="递归求和"></a>递归求和</h4><blockquote>
-<p>在接触递归之前，我们先来做这么一个问题：如果说，要对一个数字列表求和（或者其他序列）求和，除了我们可以使用内置的<font color="#6495ED">sum</font>函数，还有什么办法？</p>
-</blockquote>
 <hr>
-<blockquote>
+<h4 id="递归求和"><a href="#递归求和" class="headerlink" title="递归求和"></a>递归求和</h4><blockquote>
+<p>在接触递归之前，我们先来做这么一个问题：如果说，要对一个数字列表求和（或者其他序列）求和，除了我们可以使用内置的<font color="#6495ED">sum</font>函数，还有什么办法？<br>如果你还有更优秀的办法，可以在关于页面找到我的联系方式，有偿提交给我</p>
 <p><font color="#6495ED">while</font>循环：</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">L = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">mysum = <span class="number">0</span> <span class="comment">#保存和的变量</span></span><br><span class="line"><span class="keyword">while</span> L: <span class="comment">#将列表最为循环条件</span></span><br><span class="line">	mysum += L[<span class="number">0</span>] <span class="comment">#每次将列表第一个位置的值加到和中</span></span><br><span class="line">	L = L[<span class="number">1</span>：] <span class="comment">#去掉列表第一个元素</span></span><br></pre></td></tr></table></figure>
@@ -400,9 +398,11 @@
 <p><font color="#6495ED">L = [1,[2,[3,4],5],6,[7,8]]  </font><br>由于这个列表不是一个线性迭代，包含着复杂的元素嵌套<br>普通的循环语句处理起来将会非常难以控制</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">L = [<span class="number">1</span>,[<span class="number">2</span>,[<span class="number">3</span>,<span class="number">4</span>],<span class="number">5</span>],<span class="number">6</span>,[<span class="number">7</span>,<span class="number">8</span>]]</span><br><span class="line">sum = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mysum</span><span class="params">(L)</span>:</span></span><br><span class="line">	<span class="keyword">global</span> sum</span><br><span class="line">	<span class="keyword">for</span> var <span class="keyword">in</span> L:</span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> isinstance(var,list):   </span><br><span class="line">		<span class="comment">#如果其中元素不为列表类型，则为一个确定的值</span></span><br><span class="line">			sum += var</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			mysum(var)</span><br><span class="line">	<span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+<hr>
 <h4 id="花钱递归"><a href="#花钱递归" class="headerlink" title="花钱递归"></a>花钱递归</h4><p>思考：假如你有10000块，每天花一半，毛钱直接舍弃，那么这钱可以花几天？</p>
 <p>递归解决：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cost</span><span class="params">(money,day=<span class="number">0</span>)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> money &gt; <span class="number">0</span>:</span><br><span class="line">		money = money // <span class="number">2</span> <span class="comment">#每次花一半</span></span><br><span class="line">		day += <span class="number">1</span> <span class="comment">#花完天数+1</span></span><br><span class="line">		cost(money,day) <span class="comment">#开启花钱递归</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		print(<span class="string">'一共可以花%d天'</span> % day)</span><br><span class="line">		<span class="keyword">return</span> <span class="comment">#必须要有的一个终止条件</span></span><br></pre></td></tr></table></figure>
+<hr>
 <h4 id="递归注意事项"><a href="#递归注意事项" class="headerlink" title="递归注意事项"></a>递归注意事项</h4><blockquote>
 <p>递归的<strong>最大上限次数</strong>取决于当前操作系统的内存<br>一个<strong>没有终止条件</strong>的递归会引发错误(类似一个死循环)<br>这是因为递归的每一次<strong>函数执行*，都会在内存中</strong>产生<strong>新的函数副本，递归的</strong>内存消耗<strong>要</strong>大于<strong>普通</strong>循环<strong>；但是同样的，</strong>消耗了内存<strong>，</strong>效率高**于普通循环</p>
 </blockquote>
@@ -498,7 +498,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Python函数基础-os模块/" rel="prev" title="Python函数基础-os模块">
+              <a href="/C1.Python函数基础-os模块/" rel="prev" title="Python函数基础-os模块">
                 Python函数基础-os模块 <i class="fa fa-chevron-right"></i>
               </a>
             

@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python3.x,Python函数基础," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="OS模块 使用os模块时，不需要考虑平台差异，解释器会帮大家选择正确的系统支持可以对进程和进程运行环境进行管理该模块还可以处理大部分文件系统操作，比如删除，重命名文件，遍历目录树，以及管理文件访问权限。   os模块主要有以下几种 : posix (类unix操作系统) nt (win) mac (旧版本的MacOs) dos (DOS)**      os和sys：  os负责程序与操作系统的交">
+<meta name="keywords" content="Python3.x,Python函数基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python函数基础-os模块">
+<meta property="og:url" content="https://heroiclee.github.io/C1.Python函数基础-os模块/index.html">
+<meta property="og:site_name" content="老渔夫不吃鱼">
+<meta property="og:description" content="OS模块 使用os模块时，不需要考虑平台差异，解释器会帮大家选择正确的系统支持可以对进程和进程运行环境进行管理该模块还可以处理大部分文件系统操作，比如删除，重命名文件，遍历目录树，以及管理文件访问权限。   os模块主要有以下几种 : posix (类unix操作系统) nt (win) mac (旧版本的MacOs) dos (DOS)**      os和sys：  os负责程序与操作系统的交">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-19T04:01:52.433Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python函数基础-os模块">
+<meta name="twitter:description" content="OS模块 使用os模块时，不需要考虑平台差异，解释器会帮大家选择正确的系统支持可以对进程和进程运行环境进行管理该模块还可以处理大部分文件系统操作，比如删除，重命名文件，遍历目录树，以及管理文件访问权限。   os模块主要有以下几种 : posix (类unix操作系统) nt (win) mac (旧版本的MacOs) dos (DOS)**      os和sys：  os负责程序与操作系统的交">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://heroiclee.github.io/C1.Python函数基础-os模块/"/>
+
+
+
+
+
+  <title>Python函数基础-os模块 | 老渔夫不吃鱼</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?56b0d941d0f01534c716ffa7d8261de3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">老渔夫不吃鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://heroiclee.github.io/C1.Python函数基础-os模块/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="年轻渔夫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老渔夫不吃鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Python函数基础-os模块</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T16:24:31+08:00">
+                2018-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2、Python函数基础/" itemprop="url" rel="index">
+                    <span itemprop="name">2、Python函数基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/C1.Python函数基础-os模块/" class="leancloud_visitors" data-flag-title="Python函数基础-os模块">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="OS模块"><a href="#OS模块" class="headerlink" title="OS模块"></a>OS模块</h3><blockquote>
+<p>使用os模块时，不需要考虑平台差异，解释器会帮大家选择正确的系统支持<br>可以对进程和进程运行环境进行管理<br>该模块还可以处理大部分文件系统操作，比如<strong>删除</strong>，<strong>重命名</strong>文件，<strong>遍历目录树</strong>，以及<strong>管理文件</strong>访问权限。</p>
+</blockquote>
+<ul>
+<li>os模块主要有以下几种 :<ul>
+<li><font color="#6495ED"><strong>posix</strong></font> (类unix操作系统)</li>
+<li><font color="#6495ED"><strong>nt</strong></font> (win)</li>
+<li><font color="#6495ED"><strong>mac</strong></font> (旧版本的<strong>MacOs</strong>)</li>
+<li><font color="#6495ED"><strong>dos</strong></font> (DOS)**</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>os</strong>和<strong>sys</strong>：</p>
+<blockquote>
+<p>os负责程序与<strong>操作系统</strong>的交互<br>sys负责程序与<strong>解释器</strong>的交互</p>
+</blockquote>
+</li>
+<li><p><strong>os.path</strong>和<strong>sys.path</strong>：</p>
+<blockquote>
+<p><font color="#6495ED">sys.path</font>是<font color="#6495ED"><strong>PATH</strong></font>环境变量<br><font color="#6495ED">os.path</font>是<font color="#6495ED">os</font>模块下的子模块，提供了一些关于路径处理的函数</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h4 id="os模块常用函数"><a href="#os模块常用函数" class="headerlink" title="os模块常用函数"></a>os模块常用函数</h4><ul>
+<li><font color="#6495ED">os.name</font>：输出字符串指示正在使用的平台</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.name</span><br><span class="line"><span class="string">'nt'</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.getcwd()</font>：得到当前<strong>工作目录</strong>(就是你的进程所工作的目录)，即当前脚本工作路径</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.getcwd()</span><br><span class="line">&apos;C:\\Users\\Administrator&apos;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><strong>运行目录</strong>：执行程序时的路径</li>
+<li><strong>工作目录</strong>：程序运行时，程序中我们要操作其他文件时使用的的一系列相对路径(相对路径需要参照)，工作目录可在程序运行时更改</li>
+</ul>
+</blockquote>
+<hr>
+<ul>
+<li><font color="#6495ED">os.listdir()</font>：返回指定目录下的所有文件和目录名的一个列表，但是并没有列出来什么是目录，什么是文件。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.listdir()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.listdir()</span><br><span class="line">[ <span class="string">'桌面'</span>, <span class="string">'下载'</span>, <span class="string">'模板'</span>, <span class="string">'公共'</span>, <span class="string">'文档'</span>, <span class="string">'音乐'</span>, <span class="string">'图片'</span>, <span class="string">'视频'</span>]</span><br><span class="line"><span class="comment">#结果为列表，但是并没有列出谁是目录，谁是文件</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.remove(‘file_name’)</font>：<strong>删除</strong>指定<strong>文件</strong>，文件不存在则报错</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.remove(<span class="string">'1.txt'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">FileNotFoundError: [Errno <span class="number">2</span>] No such file <span class="keyword">or</span> directory: <span class="string">'1.txt'</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.rmdir(‘dir_name’)</font>：<strong>删除</strong>指定<strong>目录</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.remove(<span class="string">'桌面'</span>)</span><br><span class="line"><span class="comment">#删除桌面目录</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.mkdir(‘dir_name’)</font>：<strong>创建</strong>目录</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.mkdir(<span class="string">'桌面'</span>)</span><br><span class="line"><span class="comment">#创建目录名为桌面</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.makedirs(‘a/b/c’)</font>：<strong>递归创建</strong>目录</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.makedirs(<span class="string">'a/b/c'</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.system(‘ls’)</font>：执行<strong>shell</strong>命令</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.system(<span class="string">'su rm -rf /*'</span>)</span><br><span class="line"><span class="comment">#四大皆空</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.chdir(‘file_path’)</font>：改变<strong>工作目录</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.getcwd()</span><br><span class="line"><span class="string">'C:\\Users\\Administrator'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.chdir(<span class="string">'C:\\Users'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.getcwd()</span><br><span class="line"><span class="string">'C:\\Users'</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.chmod(‘file_name’)</font>：改变文件或目录的<strong>权限</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.chmod(<span class="string">'1.txt'</span>,<span class="number">445</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.system(<span class="string">'ls -l 1.txt'</span>)</span><br><span class="line">-rw-rwxr-x <span class="number">1</span> root root <span class="number">0</span> <span class="number">1</span>月  <span class="number">19</span> <span class="number">11</span>:<span class="number">42</span> <span class="number">1.</span>txt</span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Os-path模块常用函数"><a href="#Os-path模块常用函数" class="headerlink" title="Os.path模块常用函数"></a>Os.path模块常用函数</h3><ul>
+<li><font color="#6495ED">os.path.abspath(‘file_name’)</font>：<ul>
+<li>返回文件或目录的绝对路径</li>
+<li>不会检查是否存在该文件或目录</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.abspath(<span class="string">'1.txt'</span>)</span><br><span class="line"><span class="string">'/root/1.txt'</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.path.split(‘file_path’)</font>：<ul>
+<li>将路径分隔成目录和文件名，并以一个元组返回</li>
+<li>不会检查是否存在该文件或目录</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.split(<span class="string">'/root/1.txt'</span>)</span><br><span class="line">(<span class="string">'/root'</span>, <span class="string">'1.txt'</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.path.basename(‘path’)</font>：<ul>
+<li>返回路径最后的文件名</li>
+<li>如果后面还有\ / 那么返回一个空字符串</li>
+<li>不会检查是否存在该文件或目录</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.basename(<span class="string">'/root/1.txt'</span>)</span><br><span class="line"><span class="string">'1.txt'</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.path.exists(‘file_path’)</font>：<ul>
+<li>如果路径存在，则返回True，反之返回False</li>
+<li>与上面的函数不同，他就是检查这个路径是否存在</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.exists(<span class="string">'/root/2.txt'</span>)</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.path.join(‘file_path’，’file_name’)</font>：<ul>
+<li>路径拼接</li>
+<li>不会检查是否存在该文件或目录</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.join(<span class="string">'/root'</span>,<span class="string">'abc'</span>)</span><br><span class="line"><span class="string">'/root/abc'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.join(<span class="string">'root'</span>,<span class="string">'abc'</span>)</span><br><span class="line"><span class="string">'root/abc'</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.path.isdir(‘name’)</font>：<ul>
+<li>判断是否为目录，返回值为bool</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.isdir(<span class="string">'/root'</span>)</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.isdir(<span class="string">'1.txt'</span>)</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.path.isfile(‘name’)</font>：<ul>
+<li>判断是否为文件，返回值为bool</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.isfile(<span class="string">'/root'</span>)</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.isfile(<span class="string">'1.txt'</span>)</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.path.islink(‘name’)</font>：<ul>
+<li>判断是否是链接，返回值为bool</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.islink(<span class="string">'1.txt'</span>)</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.islink(<span class="string">'/usr/bin/python3'</span>)</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="comment">#ln -s 是我们在linux下创建连接的命令，类似win下的快捷方式</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><font color="#6495ED">os.path.getsize(‘path’)</font>：<ul>
+<li>返回文件大小</li>
+<li>如果文件不存在，抛出异常</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.getsize(<span class="string">'1.txt'</span>)</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.getsize(<span class="string">'2.txt'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">  File <span class="string">"/usr/local/python3/lib/python3.6/genericpath.py"</span>, line <span class="number">50</span>, <span class="keyword">in</span> getsize</span><br><span class="line">    <span class="keyword">return</span> os.stat(filename).st_size</span><br><span class="line">FileNotFoundError: [Errno <span class="number">2</span>] No such file <span class="keyword">or</span> directory: <span class="string">'2.txt'</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>转载请注明原文地址</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持将被用作发行更高质量原创技术!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="年轻渔夫 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="年轻渔夫 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    年轻渔夫
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://heroiclee.github.io/C1.Python函数基础-os模块/" title="Python函数基础-os模块">https://heroiclee.github.io/C1.Python函数基础-os模块/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python3-x/" rel="tag"># Python3.x</a>
+          
+            <a href="/tags/Python函数基础/" rel="tag"># Python函数基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/B9.Python函数基础-递归/" rel="next" title="递归">
+                <i class="fa fa-chevron-left"></i> 递归
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Python函数基础-实现Linux下Tree命令/" rel="prev" title="Python函数基础-实现Linux下Tree命令">
+                Python函数基础-实现Linux下Tree命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">年轻渔夫</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情连接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.binblogs.cn" title="小青年" target="_blank">小青年</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#OS模块"><span class="nav-number">1.</span> <span class="nav-text">OS模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#os模块常用函数"><span class="nav-number">1.1.</span> <span class="nav-text">os模块常用函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Os-path模块常用函数"><span class="nav-number">2.</span> <span class="nav-text">Os.path模块常用函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">年轻渔夫</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("dik0vxWlNgMKwo5lYIDvQOUL-gzGzoHsz", "OGcwDlp3XSFeyebGIjBBnmaI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
