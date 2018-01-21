@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="什么都帮不了你,但是除了你自己还有我">
+<meta name="description" content="pickle模块函数pickle模块可以很方便的将Python数据对象转换为二进制，并且保存原有数据状态  数据对象二进制保存在内存： pick_obj = pickle.dumps(obj)：将Python数据对象经过pickle处理，返回二进制数据 obj= loads(pick_obj)：将pickle二进制数据转换为Python数据对象     1234567&amp;gt;&amp;gt;&amp;gt; im">
 <meta name="keywords" content="Python3.x,Python函数基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pickle模块">
 <meta property="og:url" content="https://heroiclee.github.io/Python函数基础-pickle模块/index.html">
 <meta property="og:site_name" content="老渔夫不吃鱼">
-<meta property="og:description" content="什么都帮不了你,但是除了你自己还有我">
+<meta property="og:description" content="pickle模块函数pickle模块可以很方便的将Python数据对象转换为二进制，并且保存原有数据状态  数据对象二进制保存在内存： pick_obj = pickle.dumps(obj)：将Python数据对象经过pickle处理，返回二进制数据 obj= loads(pick_obj)：将pickle二进制数据转换为Python数据对象     1234567&amp;gt;&amp;gt;&amp;gt; im">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-19T04:40:24.693Z">
+<meta property="og:updated_time" content="2018-01-21T10:37:22.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pickle模块">
-<meta name="twitter:description" content="什么都帮不了你,但是除了你自己还有我">
+<meta name="twitter:description" content="pickle模块函数pickle模块可以很方便的将Python数据对象转换为二进制，并且保存原有数据状态  数据对象二进制保存在内存： pick_obj = pickle.dumps(obj)：将Python数据对象经过pickle处理，返回二进制数据 obj= loads(pick_obj)：将pickle二进制数据转换为Python数据对象     1234567&amp;gt;&amp;gt;&amp;gt; im">
 
 
 
@@ -373,7 +373,34 @@
       
 
       
-        
+        <h3 id="pickle模块函数"><a href="#pickle模块函数" class="headerlink" title="pickle模块函数"></a>pickle模块函数</h3><p><font color="#6495ED"><strong>pickle</strong></font>模块可以很方便的将<font color="#6495ED"><strong>Python</strong></font>数据对象转换为二进制，并且保存原有数据状态</p>
+<ul>
+<li>数据对象二进制保存在内存：<ul>
+<li><font color="#6495ED">pick_obj = pickle.dumps(obj)</font>：将<font color="#6495ED"><strong>Python</strong></font>数据对象经过<font color="#6495ED"><strong>pickle</strong></font>处理，返回<strong>二进制数据</strong></li>
+<li><font color="#6495ED">obj= loads(pick_obj)</font>：将<font color="#6495ED"><strong>pickle</strong></font><strong>二进制数据</strong>转换为<font color="#6495ED"><strong>Python</strong></font>数据对象</li>
+</ul>
+</li>
+</ul>
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> pickle</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>obj = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p_obj = pickle.dumps(obj)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p_obj</span><br><span class="line"><span class="string">b'\x80\x03]q\x00(K\x01K\x02K\x03e.'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(p_obj)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">bytes</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>p_obj</span><br><span class="line"><span class="string">b'\x80\x03]q\x00(K\x01K\x02K\x03e.'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>re_obj = pickle.loads(p_obj)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>re_obj</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(re_obj)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">list</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li>数据对象二进制保存到文件:<ul>
+<li><font color="#6495ED">dump(object,file)</font>：将对象写到文件，这个文件可以是实际的物理文件，但也可以是任何类似于文件的对象</li>
+<li><font color="#6495ED">obj = load(file)</font>：把文件对象里的我们之前保存进来的二进制数据返回成原先的数据对象</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line">list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">'abc'</span>,(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)]</span><br><span class="line">fp = open(<span class="string">'1.pkl'</span>,<span class="string">'wb'</span>)    <span class="comment">#这里我们用到了二进制写文件</span></span><br><span class="line">pickle.dump(list1,fp)    <span class="comment">#序列化之后保存到文件里</span></span><br><span class="line">fp.close()</span><br><span class="line"></span><br><span class="line">fp = open(<span class="string">'1.pkl'</span>,<span class="string">'rb'</span>)    <span class="comment">#以二进制读写文件打开文件</span></span><br><span class="line">list2 = pickle.load(fp)    <span class="comment">#我们从文件里读取我们之前存储的内容</span></span><br><span class="line">print(list2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator\Desktop&gt;python 1.py</span><br><span class="line">[1, 2, 3, 4, &apos;abc&apos;, (1, 2, 3)]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.pkl文件内容：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">8003 5d71 0028 4b01 4b02 4b03 4b04 5803</span><br><span class="line">0000 0061 6263 7101 4b01 4b02 4b03 8771</span><br><span class="line">0265 2e</span><br></pre></td></tr></table></figure>
+<hr>
+<p>转载请注明原文地址</p>
+
       
     </div>
     
@@ -512,8 +539,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -587,6 +623,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#pickle模块函数"><span class="nav-number">1.</span> <span class="nav-text">pickle模块函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
