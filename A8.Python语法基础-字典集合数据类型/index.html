@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="字典 字典以键值对形式存在：{ key: value } 其中key值会进行hash运算，生成hash表，所以字典的访问效率要优于普通序列数据类型(列表，元组) key值由于需要通过hash，则一些可变数据类型不可以做key值，而value的类型没有限制，可以是任意数据类型 由于进行了hash运算，那么在内存中字典其中的数据元素是无序的，没有办法进行一些像索引和切片一样的操作 字典中的key值是唯">
+<meta name="description" content="字典 字典以键值对形式存在：{ key: value } 其中key值会进行hash运算，生成hash表，所以字典的访问效率要优于普通序列数据类型(列表，元组) key值由于需要通过hash，则一些可变数据类型不可以做key值，而value的类型没有限制，可以是任意数据类型 由于进行了hash运算，那么在内存中字典其中的数据元素是无序的，没有办法进行一些像索引和切片一样的操作(但是在Python3">
 <meta name="keywords" content="Python3.x,Python语法基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字典集合数据类型">
 <meta property="og:url" content="https://heroiclee.github.io/A8.Python语法基础-字典集合数据类型/index.html">
 <meta property="og:site_name" content="老渔夫不吃鱼">
-<meta property="og:description" content="字典 字典以键值对形式存在：{ key: value } 其中key值会进行hash运算，生成hash表，所以字典的访问效率要优于普通序列数据类型(列表，元组) key值由于需要通过hash，则一些可变数据类型不可以做key值，而value的类型没有限制，可以是任意数据类型 由于进行了hash运算，那么在内存中字典其中的数据元素是无序的，没有办法进行一些像索引和切片一样的操作 字典中的key值是唯">
+<meta property="og:description" content="字典 字典以键值对形式存在：{ key: value } 其中key值会进行hash运算，生成hash表，所以字典的访问效率要优于普通序列数据类型(列表，元组) key值由于需要通过hash，则一些可变数据类型不可以做key值，而value的类型没有限制，可以是任意数据类型 由于进行了hash运算，那么在内存中字典其中的数据元素是无序的，没有办法进行一些像索引和切片一样的操作(但是在Python3">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-18T05:54:53.910Z">
+<meta property="og:updated_time" content="2018-01-29T09:31:05.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字典集合数据类型">
-<meta name="twitter:description" content="字典 字典以键值对形式存在：{ key: value } 其中key值会进行hash运算，生成hash表，所以字典的访问效率要优于普通序列数据类型(列表，元组) key值由于需要通过hash，则一些可变数据类型不可以做key值，而value的类型没有限制，可以是任意数据类型 由于进行了hash运算，那么在内存中字典其中的数据元素是无序的，没有办法进行一些像索引和切片一样的操作 字典中的key值是唯">
+<meta name="twitter:description" content="字典 字典以键值对形式存在：{ key: value } 其中key值会进行hash运算，生成hash表，所以字典的访问效率要优于普通序列数据类型(列表，元组) key值由于需要通过hash，则一些可变数据类型不可以做key值，而value的类型没有限制，可以是任意数据类型 由于进行了hash运算，那么在内存中字典其中的数据元素是无序的，没有办法进行一些像索引和切片一样的操作(但是在Python3">
 
 
 
@@ -411,7 +411,7 @@
 <li>字典以键值对形式存在：<font color="#6495ED">{ key</font>: <font color="#6495ED">value }</font></li>
 <li>其中<font color="#6495ED">key</font>值会进行<font color="#6495ED">hash</font>运算，生成<font color="#6495ED">hash</font>表，所以字典的<strong>访问效率</strong>要<strong>优于</strong>普通序列数据类型(列表，元组)</li>
 <li><font color="#6495ED">key</font>值由于需要通过<font color="#6495ED">hash</font>，则一些<strong>可变数据类型不可以</strong>做<font color="#6495ED">key</font>值，而<font color="#6495ED">value</font>的类型没有限制，可以是任意数据类型</li>
-<li>由于进行了<font color="#6495ED">hash</font>运算，那么在内存中字典其中的数据元素是<strong>无序</strong>的，没有办法进行一些像<strong>索引</strong>和<strong>切片</strong>一样的操作</li>
+<li>由于进行了<font color="#6495ED">hash</font>运算，那么在内存中字典其中的数据元素是<strong>无序</strong>的，没有办法进行一些像<strong>索引</strong>和<strong>切片</strong>一样的操作<br>(但是在<strong><font color="#6495ED">Python3.6后</font></strong>，字典数据类型已经被更改为<strong>有序数据类型</strong>；<a href="https://docs.python.org/3/whatsnew/3.6.html#new-dict-implementation" target="_blank" rel="noopener">查阅地址</a>；(<font color="#6495ED">from collections import <strong>OrderedDict</strong></font>))</li>
 <li>字典中的<font color="#6495ED">key</font>值是<strong>唯一</strong>的</li>
 <li>字典为<strong>可变</strong>数据类型</li>
 </ul>
