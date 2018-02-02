@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[闭包]]></title>
+    <url>%2FC5-Python%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E5%87%BD%E6%95%B0%E9%97%AD%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[函数闭包 什么是闭包? 内部函数对外部函数作用域里对象的引用(非全局变量)，则称内部函数为闭包 一个闭包就是你调用了外部函数，外部函数返回内部函数,此时的内部函数就叫做闭包函数 闭包在运行时可以有多个实例，不同的引用环境和相同的函数组合可以产生不同的实例 闭包简单示例： 12345678def wai(): a = 1 def nei():#闭包 print(a) return neifunc = wai()func() 通过这个例子大家可以看到，在外部函数中，本应该在wai函数执行完死掉的变量a，由于此时有了 内部函数的引用，从而使得这个变量并不会死去，而是类似于继承一样，通过nei函数又存活了下来 接着让我们愉快的看下一个例子，继续理解闭包 12345678910111213num = 1 #全局变量numdef func(): a = 1 def func1(): global num #这里内部函数 使用全局变量num num += a #并且在全局num函数的基础上 每次+a print(num) return func1res = func() #返回值为闭包函数res() #第一次调用闭包函数res() #那么这肯定是第二次调用闭包函数res() #我这里注释第三次，没人有歧义吧 三次闭包函数的执行结果，我们来看一下吧 123234 分析一下，这里出现的结果首先三次值都是在全局变量num的基础上做累加 a 的操作说明在闭包函数对象res存活期间，a变量将会一直存活 最后我们以将一个可变数据对象作为闭包引用的变量为例 12345678910def func(obj): #接收可变数据对象作为参数 def func1(): obj[0] += 1 #内部将可变数据对象的第一个位置值 += 1 print(obj) #打印加完之后的可变数据对象 return func1mylist = [1,2,3,4,5]res = func(mylist)res()res()res() 执行的结果 1234[1, 2, 3, 4, 5][2, 2, 3, 4, 5][3, 2, 3, 4, 5][4, 2, 3, 4, 5] 闭包思考： 闭包私有化了变量，实现了类似于面向对象中实例的功能 由于闭包引用了外部函数的局部变量，则外部函数中的局部变量没有及时释放，消耗内存 在python中，使用闭包的另一个场景就是装饰器，也叫语法糖 @ 实现闭包： 函数嵌套 内部函数对外部函数作用域里对象的引用 外部函数返回内部函数对象 转载请注明原文地址]]></content>
+      <categories>
+        <category>3、Python函数进阶</category>
+      </categories>
+      <tags>
+        <tag>Python3.x</tag>
+        <tag>Python函数进阶</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Centos安装Python3及设置对应版本pip]]></title>
     <url>%2F02.Centos%E5%AE%89%E8%A3%85Python3%E5%8F%8A%E8%AE%BE%E7%BD%AE%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%ACpip%2F</url>
     <content type="text"><![CDATA[安装Python3 安装Python依赖： yum install openssl-devel bzip2-devel expat-devel gdbm-devel readline-devel sqlite-devel 由于Python在linux不支持我们以可执行程序的方式安装，所以需要我们选择对应的版本源码安装源码下载站点： https://www.python.org/ftp/python/ 以Python3.6为例： wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgztar -zxvf Python-3.6.2.tgzcd Python-3.6.2/ 创建Python安装路径： sudo mkdir /usr/local/python3 指定安装路径： ./configure –prefix=/usr/local/python3 执行安装命令： sudo make &amp;&amp; sudo make install 将安装目录下的Python设置软连接 sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python3 注意：在这里的Python3目录下，其实和我们Windows安装好Python的目录类似，bin目录类似win下Python的Scripts目录，其中包含了Python的很多组件和你将要安装的三方模块 为Python3设置PIP 由于源码安装的过程中，Python3其中已经是默认安装了pip及setuptools，所以只需要我们为其设置Linux的环境变量，创建软件连到 /usr/bin/ 下即可 ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3 由于python2被我们的系统所使用，所以这里保守的办法是Python3的东西都起名叫做xx3当然你也可以修改默认的系统使用Python2地址的导入信息，来使Python3成为默认python环境。 为Python2设置PIP 在linux下，现在已经是默认自带了Python2但是可能部分系统类型还没有pip这个工具，那么需要我们额外的手动安装 安装扩展源： yum -y install epel-release 使用yum安装 yum install python-pip]]></content>
