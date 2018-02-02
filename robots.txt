@@ -9,3 +9,6 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
+
+Sitemap: https://heroiclee.github.io/sitemap.xml
+Sitemap: https://heroiclee.github.io/baidusitemap.xml
