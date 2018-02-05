@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[03-学习过程中你可能遇到的错误(更新中)]]></title>
+    <title><![CDATA[学习过程中你可能遇到的错误(更新中)]]></title>
     <url>%2F03-%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E4%BD%A0%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%94%99%E8%AF%AF-%E6%9B%B4%E6%96%B0%E4%B8%AD%2F</url>
     <content type="text"><![CDATA[SyntaxError: 语法错误SyntaxError: invalid syntax IndexError: 索引错误IndexError: string index out of range TypeError: 对字符串其中的值进行修改TypeError: ‘str’ object does not support item assignment TypeError: 不能作为函数使用的对象，加括号当函数来使用了TypeError: ‘str’ object is not callable NameError: 尝试访问未定义的变量NameError: name ‘a’ is not defined TypeError: 除法用在了两种不支持的数据类型TypeError: unsupported operand type(s) for /: ‘str’ and ‘int’ TypeError: 将两种不同数据类型相拼接TypeError: can only concatenate tuple (not “list”) to tuple TypeError: 函数只能处理整数参数TypeError: ‘float’ object cannot be interpreted as an integer KeyError: 访问字典不存在key值报错KeyError: 4 TypeError: 可变数据对象，无法进行hash运算TypeError: unhashable type: ‘list’ dictionary update dict((seq)): 这里的序列必须是只含有两个数据的，长度为2ValueError: dictionary update sequence element #1 has length 4; 2 is required at least X arguments: 函数调用，参数没传够指定数TypeError: pop expected at least 1 arguments, got 0 empty set: 对空数据集进行pop删除KeyError: ‘pop from an empty set’]]></content>
       <categories>
