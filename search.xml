@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C7-Python函数进阶-正则]]></title>
+    <url>%2FC7-Python%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E6%AD%A3%E5%88%99%2F</url>
+    <content type="text"><![CDATA[正则 一些特殊符号及文本组合在一起的用来描述字符或字符串的一些规则，叫做正则 正则中的特殊符号 匹配一个范围： [] [A-Z]：A, B, C… [0-9]：1, 2, 3… 匹配任何数字字符：\d \d：1, 2, 3… 匹配任何空白符：\s \s：\t (水平制表), \v (垂直制表), \n (换行), \r (回车), \f (换页) 匹配任何数字、字母、字符及下划线：\w \w： a, 1, _ 匹配除了换行符任意一个单个字符：. a.c：abc, a2c, a_c ..：匹配任意字符组成的两个长度的字符串 匹配前面出现的正则表达式0次或多次：* a*：aaa 或是一个空 [abc]*：aaabbb abc bbaacc 匹配前面出现的正则表达式0次或一次：? a?：a 或是一个空 匹配前面出现的正则表达式1次或多次：+ a+：aaa a abc+：abcabc 匹配前面出现的正则表达式固定次数：{} a{5}： aaaaa \d{5}：12345, 22222 匹配明确的多个选择：| a | b：a, b abc|cdf|123：abc, cdf, 123 匹配字符串的开头或结尾：^, $ ^abc：匹配所有以abc开头的字符串 abc$：匹配所有以abc结尾的字符串 否定匹配：[^] [^a]：匹配除了a之外的所有字符 re模块函数 re.compile(pattern)编译正则表达式一般的，特殊字符再进行正则匹配的时候，如果你不预先编译正则表达式，解释器也会在你传入参数的时候进行编译一些常用正则表达式，我们可以提前使用该函数进行预先编译，提高程序的效率 12&gt;&gt;&gt; import re&gt;&gt;&gt; regex = re.compile('abc') re.match(pattern,string)尝试使用正则模式pattern在字符串中的开头进行严格匹配，如果开头匹配失败则匹配失败匹配成功：返回一个匹配对象，匹配到的值可通过group函数获取匹配失败：返回None 1234&gt;&gt;&gt; res = re.match('abc','abcac')&lt;_sre.SRE_Match object; span=(0, 3), match='abc'&gt; #返回表示选择的区间以及匹配到的结果&gt;&gt;&gt; &gt;&gt;&gt; res.group()'abc' re.findall(pattern,string)返回字符串中正则模式的所有非重复出现 12&gt;&gt;&gt; re.findall('\*','a*b*c*')['*', '*', '*'] 注意：由于匹配的表达式中，我希望匹配的只是单纯的*号，并不具有特殊意义，所以要加一个斜杠防止转义 re.search(pattern,string)返回字符串中正则模式的第一次出现，没有匹配结果则返回None结果可以通过返回值的group函数获取 1234&gt;&gt;&gt; res = re.search('\*','a*b*c*')&lt;_sre.SRE_Match object; span=(1, 2), match='*'&gt;&gt;&gt;&gt; res.group()'*' re.sub(str1,str2,str3) re.subn(str1,str2,str3) str1：要替换的字符串 str2：替换成什么 str3：在哪个字符串里进行替换 这两个函数都可以实现搜索和替换功能，均返回一个替换之后的新字符串 subn函数会以元组形式包含一个表示替换的总数 123456&gt;&gt;&gt; var = re.sub('\*','_','a*b*c*')&gt;&gt;&gt; var'a_b_c_'&gt;&gt;&gt; var = re.subn('\*','_','a*b*c*')&gt;&gt;&gt; var('a_b_c_', 3) 贪婪非贪婪如果问号?紧跟在任何使用闭合（类似* + 这样的操作符）的匹配后面， 它将直接要求正则表达式引擎匹配尽可能少的次数，这叫做非贪婪 贪婪匹配：正则表达式引擎将试图“吸收”匹配该模式的尽可能多的字符非贪婪匹配：问号要求正则表达式引擎去“偷懒”，如果可能，就在当前的正则表达式中尽可能少地匹配字符，留下尽可能多的字符给后面的模式 12345678910&gt;&gt;&gt; import re&gt;&gt;&gt; mystr = 'a*b*c*d*e*f*g'ac&gt;&gt;&gt; re.findall('.+?', mystr) #非贪婪模式进行匹配['a', '*', 'b', '*', 'c', '*', 'd', '*', 'e', '*', 'f', '*', 'g']&gt;&gt;&gt; re.findall('.+', mystr) #贪婪模式进行匹配['a*b*c*d*e*f*g']&gt;&gt;&gt; re.findall('.*', mystr) #贪婪模式进行匹配['a*b*c*d*e*f*g', '']&gt;&gt;&gt; re.findall('.*?', mystr) #非贪婪模式进行匹配['', '', '', '', '', '', '', '', '', '', '', '', '', ''] #结果不同在于对+号和*号特殊字符的解释 转载请注明原文地址]]></content>
+      <categories>
+        <category>3、Python函数进阶</category>
+      </categories>
+      <tags>
+        <tag>Python3.x</tag>
+        <tag>Python函数进阶</tag>
+        <tag>正则</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[学习过程中你可能遇到的错误(更新中)]]></title>
     <url>%2F03-%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E4%BD%A0%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%94%99%E8%AF%AF-%E6%9B%B4%E6%96%B0%E4%B8%AD%2F</url>
     <content type="text"><![CDATA[SyntaxError: 语法错误SyntaxError: invalid syntax IndexError: 索引错误IndexError: string index out of range TypeError: 对字符串其中的值进行修改TypeError: ‘str’ object does not support item assignment TypeError: 不能作为函数使用的对象，加括号当函数来使用了TypeError: ‘str’ object is not callable NameError: 尝试访问未定义的变量NameError: name ‘a’ is not defined TypeError: 除法用在了两种不支持的数据类型TypeError: unsupported operand type(s) for /: ‘str’ and ‘int’ TypeError: 将两种不同数据类型相拼接TypeError: can only concatenate tuple (not “list”) to tuple TypeError: 函数只能处理整数参数TypeError: ‘float’ object cannot be interpreted as an integer KeyError: 访问字典不存在key值报错KeyError: 4 TypeError: 可变数据对象，无法进行hash运算TypeError: unhashable type: ‘list’ dictionary update dict((seq)): 这里的序列必须是只含有两个数据的，长度为2ValueError: dictionary update sequence element #1 has length 4; 2 is required at least X arguments: 函数调用，参数没传够指定数TypeError: pop expected at least 1 arguments, got 0 empty set: 对空数据集进行pop删除KeyError: ‘pop from an empty set’]]></content>
