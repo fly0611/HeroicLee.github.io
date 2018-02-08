@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[C8-Python函数进阶-简易百度图片爬虫]]></title>
+    <title><![CDATA[简易百度图片爬虫]]></title>
     <url>%2FC8-Python%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E7%AE%80%E6%98%93%E7%99%BE%E5%BA%A6%E5%9B%BE%E7%89%87%E7%88%AC%E8%99%AB%2F</url>
     <content type="text"><![CDATA[简易百度图片爬虫 目标站点：任意百度图片地址 抓取分析：百度图片中的Html代码中objURL部分为实际图片地址，其他连接大家可以尝试访问，部分为压缩图片，部分做了防盗链处理，还有部分是404无法访问 实际代码： 12345678910111213141516171819from urllib.request import urlopen,urlretrieveimport reurl = "http://image.baidu.com/search/index?tn=baiduimage&amp;ipn=r&amp;ct=201326592&amp;cl=2&amp;lm=-1&amp;st=-1&amp;fm=index&amp;fr=&amp;sf=1&amp;fmq=&amp;pv=&amp;ic=0&amp;nc=1&amp;z=&amp;se=1&amp;showtab=0&amp;fb=0&amp;width=&amp;height=&amp;face=0&amp;istype=2&amp;ie=utf-8&amp;word=%E7%BE%8E%E5%A5%B3&amp;oq=%E7%BE%8E%E5%A5%B3&amp;rsp=-1#z=0&amp;pn=&amp;ic=0&amp;st=-1&amp;face=0&amp;s=0&amp;lm=-1"html = urlopen(url)obj = html.read().decode() #得到网页HTML源码urls = re.findall(r'"objURL":"(.*?)"',obj)#在这一步，获取网页中的objURL部分，也就是真正的图片地址index = 0for url in urls: if index &lt;=10:#控制下载10张 try: print('Downloading...%d'%(index)) urlretrieve(url,'pic'+str(index)+'.png') #urlretrieve函数 下载图片 index += 1 except Exception: #当由于网络原因或图片服务器出现问题时，捕获异常即可，不使程序退出 print('Downloading Failed%d'%(index)) finally: print('Downloading Complete') else: break urlopen( url, )： 打开一个连接，并且返回一个HttpResponse对象 参数第一个为URL连接地址 urlretrieve(url, path )： 根据资源地址，下载资源 第一个参数为地址，第二个参数为本地保存路径 分析：这里只是一个非常简单的页面分析代码，通过正则分析页面中的对应URL部分，并且使用 ( ) 提取出真正需要的内容关于爬虫，此处只介绍了不到0.01的部分，所以请各位观众在阅读时，了解这只是一个小玩具，单纯为了练习正则 转载请注明原文地址]]></content>
       <categories>
