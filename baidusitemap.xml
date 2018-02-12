@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://heroiclee.github.io/01-%E5%AD%A6%E4%B9%A0Python%E4%BD%A0%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E7%9A%84/</loc>
+    <lastmod>2018-02-12T06:48:13.121Z</lastmod>
+    <data>
+        <display>
+        <title>学习Python你可能需要的</title>
+        <pubTime>2018-01-22T03:42:50.000Z</pubTime>
+        
+        <tag>Python环境部署</tag>
+         
+         
+           
+             
+              <breadCrumb title="0、Python环境部署" url="https://heroiclee.github.io/categories/0%E3%80%81Python%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://heroiclee.github.io/C9-Python%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86%E6%A8%A1%E5%9D%97/</loc>
     <lastmod>2018-02-10T09:44:30.685Z</lastmod>
     <data>
@@ -199,26 +219,6 @@
            
              
               <breadCrumb title="1、Python语法基础" url="https://heroiclee.github.io/categories/1%E3%80%81Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://heroiclee.github.io/01-%E5%AD%A6%E4%B9%A0Python%E4%BD%A0%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E7%9A%84/</loc>
-    <lastmod>2018-01-26T02:49:25.543Z</lastmod>
-    <data>
-        <display>
-        <title>学习Python你可能需要的</title>
-        <pubTime>2018-01-22T03:42:50.000Z</pubTime>
-        
-        <tag>Python环境部署</tag>
-         
-         
-           
-             
-              <breadCrumb title="0、Python环境部署" url="https://heroiclee.github.io/categories/0%E3%80%81Python%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
           
         </display>
     </data>
