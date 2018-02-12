@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://heroiclee.github.io/A3-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E8%BF%90%E7%AE%97%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    
+    <lastmod>2018-02-12T07:04:27.415Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://heroiclee.github.io/A2-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F%E6%9C%AC%E8%B4%A8/</loc>
+    
+    <lastmod>2018-02-12T06:59:14.161Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://heroiclee.github.io/A1-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    
+    <lastmod>2018-02-12T06:56:08.037Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://heroiclee.github.io/03-%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E4%BD%A0%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%94%99%E8%AF%AF-%E6%9B%B4%E6%96%B0%E4%B8%AD/</loc>
+    
+    <lastmod>2018-02-12T06:55:14.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://heroiclee.github.io/02-Centos%E5%AE%89%E8%A3%85Python3%E5%8F%8A%E8%AE%BE%E7%BD%AE%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%ACpip/</loc>
+    
+    <lastmod>2018-02-12T06:54:53.103Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://heroiclee.github.io/01-%E5%AD%A6%E4%B9%A0Python%E4%BD%A0%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E7%9A%84/</loc>
     
     <lastmod>2018-02-12T06:48:13.121Z</lastmod>
@@ -37,13 +72,6 @@
   </url>
   
   <url>
-    <loc>https://heroiclee.github.io/03-%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E4%BD%A0%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%94%99%E8%AF%AF-%E6%9B%B4%E6%96%B0%E4%B8%AD/</loc>
-    
-    <lastmod>2018-02-05T14:20:59.019Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://heroiclee.github.io/C5-Python%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E5%87%BD%E6%95%B0%E9%97%AD%E5%8C%85/</loc>
     
     <lastmod>2018-02-04T10:34:09.364Z</lastmod>
@@ -54,13 +82,6 @@
     <loc>https://heroiclee.github.io/A8-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%AD%97%E5%85%B8%E9%9B%86%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
     
     <lastmod>2018-01-29T09:31:05.990Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://heroiclee.github.io/02-Centos%E5%AE%89%E8%A3%85Python3%E5%8F%8A%E8%AE%BE%E7%BD%AE%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%ACpip/</loc>
-    
-    <lastmod>2018-01-28T12:39:26.240Z</lastmod>
     
   </url>
   
@@ -163,13 +184,6 @@
   </url>
   
   <url>
-    <loc>https://heroiclee.github.io/A3-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E8%BF%90%E7%AE%97%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
-    
-    <lastmod>2018-01-18T05:54:50.415Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://heroiclee.github.io/B1-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</loc>
     
     <lastmod>2018-01-18T05:54:42.492Z</lastmod>
@@ -201,20 +215,6 @@
     <loc>https://heroiclee.github.io/A9-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0/</loc>
     
     <lastmod>2018-01-18T05:54:14.669Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://heroiclee.github.io/A2-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F%E6%9C%AC%E8%B4%A8/</loc>
-    
-    <lastmod>2018-01-18T05:45:52.303Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://heroiclee.github.io/A1-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
-    
-    <lastmod>2018-01-18T05:45:46.449Z</lastmod>
     
   </url>
   
