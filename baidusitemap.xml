@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://heroiclee.github.io/B9-Python%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80-%E9%80%92%E5%BD%92/</loc>
+    <lastmod>2018-02-27T06:01:04.789Z</lastmod>
+    <data>
+        <display>
+        <title>递归</title>
+        <pubTime>2018-01-18T08:24:25.000Z</pubTime>
+        
+        <tag>Python3.x</tag>
+         
+        <tag>Python函数基础</tag>
+         
+         
+           
+             
+              <breadCrumb title="2、Python函数基础" url="https://heroiclee.github.io/categories/2%E3%80%81Python%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://heroiclee.github.io/A3-Python%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80-%E8%BF%90%E7%AE%97%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
     <lastmod>2018-02-26T06:06:49.240Z</lastmod>
     <data>
@@ -412,28 +434,6 @@
         <display>
         <title>os模块</title>
         <pubTime>2018-01-18T08:24:31.000Z</pubTime>
-        
-        <tag>Python3.x</tag>
-         
-        <tag>Python函数基础</tag>
-         
-         
-           
-             
-              <breadCrumb title="2、Python函数基础" url="https://heroiclee.github.io/categories/2%E3%80%81Python%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://heroiclee.github.io/B9-Python%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80-%E9%80%92%E5%BD%92/</loc>
-    <lastmod>2018-01-19T03:21:12.307Z</lastmod>
-    <data>
-        <display>
-        <title>递归</title>
-        <pubTime>2018-01-18T08:24:25.000Z</pubTime>
         
         <tag>Python3.x</tag>
          
