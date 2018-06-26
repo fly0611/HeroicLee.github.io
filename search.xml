@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[D2-Python函数进阶-sys模块]]></title>
+    <url>%2FD2-Python%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-sys%E6%A8%A1%E5%9D%97%2F</url>
+    <content type="text"><![CDATA[#未完持续]]></content>
+      <categories>
+        <category>3、Python函数进阶</category>
+      </categories>
+      <tags>
+        <tag>Python3.x</tag>
+        <tag>Python函数进阶</tag>
+        <tag>sys模块</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[随机数模块]]></title>
     <url>%2FD1-Python%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6-%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%A8%A1%E5%9D%97%2F</url>
     <content type="text"><![CDATA[随机数模块Python中，有一个叫做random的内置模块，可以很方便的为我们生成各式的随机数据 随机整数 random.randrange( stop ) 返回从0-stop区间内的随机整数 12&gt;&gt;&gt; random.randrange(20)7 random.randrange( start, stop, step ) 返回从start-stop区间内，并且步长为step的一个整数，类似range函数 12345678&gt;&gt;&gt; random.randrange(0,10,3)3&gt;&gt;&gt; random.randrange(0,10,3)6&gt;&gt;&gt; random.randrange(0,10,3)6&gt;&gt;&gt; random.randrange(0,10,3)9 random.randint(start, stop) 返回start-stop区间内的一个整数 123456&gt;&gt;&gt; random.randint(10,20)19&gt;&gt;&gt; random.randint(10,20)19&gt;&gt;&gt; random.randint(10,20)10 random.getrandbits(num) 传入一个num值，返回一个从0到2的num次方(2 ** num)区间内的一个整数 123456&gt;&gt;&gt; random.getrandbits(3)#(2**3)5&gt;&gt;&gt; random.getrandbits(3)2&gt;&gt;&gt; random.getrandbits(3)1 随机浮点数 random.random() 返回介于0到1之间的浮点数 1234&gt;&gt;&gt; random.random()0.018594388691108188&gt;&gt;&gt; random.random()0.7626285486964196 random.uniform(start, stop) 返回介于start-stop之间的浮点数，start和stop的值也可能出现 123456&gt;&gt;&gt; random.uniform(1,3)1.5281489461709883&gt;&gt;&gt; random.uniform(1,3)1.0881355542393485&gt;&gt;&gt; random.uniform(1,3)1.4888568616457178 随机序列 random.choice(seq) 从非空序列seq中随机选取一个元素，如果为空序列，则引发IndexError 1234&gt;&gt;&gt; random.choice([1,2,3,4,5])3&gt;&gt;&gt; random.choice([1,2,3,4,5])2 random.shuffle(seq) 将可变序列随机打乱 1234&gt;&gt;&gt; mylist = [1,2,3,4,5]&gt;&gt;&gt; random.shuffle(mylist)&gt;&gt;&gt; mylist[5, 4, 1, 3, 2] random.sample(seq,num) 从数据集中重新抽取num个元素形成新的序列(不重复随机抽样)，不会修改原有数据集num值不可大于数据集最大长度 123456&gt;&gt;&gt; random.sample(mylist,3)[3, 4, 1]&gt;&gt;&gt; random.sample(mylist,3)[5, 4, 1]&gt;&gt;&gt; random.sample(mylist,3)[5, 2, 4] 其他随机函数 random.expovariate(lambd) 指数分布 random.gammavariate(alpha, beta) 伽玛分布 random.gauss(mu, sigma) 高斯分布 random.lognormvariate(mu, sigma) 对数正态分布 random.normalvariate(mu, sigma) 正态分布 random.vonmisesvariate(mu, kappa) 卡帕分布 random.paretovariate(alpha) 帕累托分布 random.weibullvariate(alpha, beta) 威布尔分布 random.betavariate(alpha, beta) β分布，返回的结果在0~1之间 转载请注明原文地址]]></content>
